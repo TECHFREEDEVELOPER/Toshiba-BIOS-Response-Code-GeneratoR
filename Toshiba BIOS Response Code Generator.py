@@ -78,10 +78,20 @@ def generate_response_code(serial_number, challenge_code):
 
 def main():
     """Main function to generate response code."""
+    print("\nWARNING: This program is for educational purposes only.")
+    print("It is intended to assist Toshiba PC users in recovering BIOS passwords.")
+    print("Unauthorized use of this program for malicious purposes is strictly prohibited.")
+    print("By running this program, you agree to use it responsibly and in compliance with applicable laws.\n")
+
+    agreement = input("Do you agree to use this program responsibly? (yes/no): ").lower()
+    if agreement != "yes":
+        print("You must agree to use the program responsibly to proceed.")
+        return
+
     # Retrieve the serial number of the Toshiba laptop
     serial_number = input("Enter PC serial number: ")
 
-    challenge_code = input("Enter challenge code : ")  # Input challenge code
+    challenge_code = input("Enter challenge code: ")  # Input challenge code
 
     # Generate response code
     response_code = generate_response_code(serial_number, challenge_code)
@@ -92,5 +102,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
